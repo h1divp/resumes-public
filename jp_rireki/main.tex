@@ -1,0 +1,142 @@
+%
+% Copyright (c) 1996, 2004, 2006, 2009, 2014, 2016, 2019
+% Tama Communications Corporation. All rights reserved.
+%
+% Redistribution and use in source and binary forms, with or without
+% modification, are permitted provided that the following conditions
+% are met:
+% 1. Redistributions of source code must retain the above copyright
+%    notice, this list of conditions and the following disclaimer.
+% 2. Redistributions in binary form must reproduce the above copyright
+%    notice, this list of conditions and the following disclaimer in the
+%    documentation and/or other materials provided with the distribution.
+%
+% THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+% ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+% IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+% ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+% FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+% DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+% OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+% HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+% LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+% OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+% SUCH DAMAGE.
+%
+%----------------------------------------------------------------------------
+%
+% 多摩通信社からのお知らせ
+%
+% 「履歴書猿人」(https://www.tamacom.com/engine/rireki2/) という履歴書作成のための
+% Webアプリケーションを公開しております。TeX の知識なしにTeX の履歴書が作成でき、
+% 様々なカスタマイズも可能です。こちらもご利用いただけると幸いです。
+%
+%----------------------------------------------------------------------------
+\newif\iflualatex
+% lualatex を使用するには \lualatextrue を有効にしてください
+%\lualatextrue
+%
+% ヘッダー
+%
+\iflualatex
+\documentclass[b5j]{ltjsarticle}
+\usepackage[deluxe,nfssonly]{luatexja-preset}
+\usepackage{graphicx}
+\else
+\documentclass[uplatex,b5j]{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+\fi
+\usepackage{main}
+%
+% オプション
+%
+% 下記のオプションが利用可能です。
+%
+%\空行挿入		% 学歴と職歴の間に空行を挿入します
+ 
+\newcommand{\jpdate}{\the\year 年\the\month 月\the\day 日}
+
+\begin{document}
+%
+% ID情報
+%
+\姓{GUTIERREZ}
+\名{Phoenix}
+\姓読み{グティエレス}
+\名読み{フェニックス}
+\性別{男}					% 男|女
+\誕生日{}
+\現在日付{\jpdate}
+\年齢{22}
+%
+% 顔写真
+%
+% 画像ファイルにはEPS フォーマット・縦横比4:3 のものをご使用ください。
+% 縦を4cm に調整し、縦横比を変更せずに印刷します。
+% 次のように指定します。
+% \顔写真{photo.jpg}
+%
+% \顔写真{photo.jpg}
+\顔写真{}
+%
+% 現住所
+%
+\現住所郵便番号{}
+\現住所{\begin{tabular}{l}\\USA, Florida, Gainesville\end{tabular}}
+\現住所読み{アメリカ フロリダシュウ ゲインズビル}
+\現住所電話番号{}
+\現住所呼び出し{}
+%
+% 連絡先
+%
+\連絡先郵便番号{}
+\連絡先{\begin{tabular}{c}phoenixgutierrez@pm.me\end{tabular}}
+\連絡先読み{}
+\連絡先市外局番{}
+\連絡先電話番号{}
+\連絡先呼び出し{}
+%
+% 学歴、職歴
+%
+% 学歴、職歴を年月順に列挙してください。合計20個まで記入出来ます。
+% 20個を超える部分は印刷されませんので、ご注意ください。
+% 印刷順は、学歴=>職歴の順になります。
+%
+\学歴{2022}{5}{（アメリカ）フロリダ大学（University of Florida）入学}
+\学歴{2024}{4}{（日本）名古屋大学　工学部（交換留学）入学}
+\学歴{2025}{2}{（日本）名古屋大学　工学部（交換留学）修了}
+\学歴{2026}{12}{（アメリカ）フロリダ大学（University of Florida）卒業見込み}
+\学歴{}{}{　　副専攻：日本語学}
+\学歴{}{}{　　課外活動：SwampHacks リード・テクニカルディレクター}
+\学歴{}{}{　　Open Source Club リードソフトウェアデベロッパー}
+\職歴{2026}{5}{Vobile Group Limited　フルタイムインターンシップ参加}
+\職歴{}{}{　　（ソフトウェアエンジニアインターン）}
+\職歴{}{}{現在に至る}
+%
+% 資格
+%
+% 資格を取得年月順に列挙してください。9つまで記入できます。
+% 9つを超える部分は印刷されませんので、ご注意ください。
+%
+% \資格{}{}{}
+%
+% 個人情報
+%
+% 志望の動機と本人希望記入欄はlatex のコマンドを記述できます。
+%
+\志望の動機{\footnotesize
+【自己PR】
+
+■AWS／KubernetesによるクラウドインフラとGo言語開発
+
+強みはAWS EKSによるKubernetes環境でのプロダクション運用と、Go言語によるスケーラブルなバックエンド設計です。VobileにてFluxCDを用いたGitOpsやHelmによるデプロイ管理を実践しており、前職のSwampHacksでは技術責任者として400人規模のイベント管理・応募プラットフォームを構築しました。
+
+■異文化環境での主体的なリーダーシップとコミュニティ形成力
+
+現在、20名規模の日本語読書会を主催し、JLPT N2レベルの文法指導やメンター活動を通じて、メンバーが共に成長できる環境を構築しています。また、日本への留学中には、外国人が一人もいない漫画研究会等のサークルに深く入り込み、会誌への寄稿やイベントでの物品販売などの役割を積極的に担いました。交流を続ける中で、日本社会特有の高文脈コミュニケーションや文化的な機微を深く理解し、適応する力を磨いてきました。
+}
+\本人希望記入欄{日本での就労にあたり、在留資格（技術・人文知識・国際業務）の取得サポートを希望いたします。}
+
+\サイン{}
+
+\end{document}

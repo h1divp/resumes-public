@@ -1,0 +1,132 @@
+% +++
+% latex = "platex"
+% +++
+\RequirePackage{plautopatch}
+\documentclass[dvipdfmx,a4paper]{jsarticle}
+\usepackage{main}
+
+\newcommand{\jpdate}{\the\year 年\the\month 月\the\day 日}
+
+\title{職務経歴書}
+\author{\shortstack{GUTIERREZ Phoenix \\（グティエレス フェニックス）}}
+\date{\jpdate}
+
+% ページ番号を消す場合はコメントを外す
+% \pagestyle{empty}
+
+\begin{document}
+
+\maketitle
+
+\section{応募職種}
+ソフトウェアエンジニア / クラウドインフラエンジニア（技術職）
+
+\section{職務経歴要約}
+フロリダ大学情報工学科在学中（2026年12月卒業見込み）。Go言語を用いたバックエンド開発およびKubernetes環境でのクラウドインフラ運用を専門とする。学生主導ハッカソンのテクニカルディレクターとして大規模イベントのシステム設計を経験し、現在はVobile Group Limitedにてプロダクション規模のクラウドインフラ運用に従事。名古屋大学への交換留学を経て日本語での実務コミュニケーションが可能。2027年4月からの就業を希望。
+
+\section{職務経歴詳細}
+
+\subsection*{Vobile Group Limited（2026年5月～現在）}
+事業内容：デジタルコンテンツ保護・取引向けSaaSの提供
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{|p{2.8cm}|X|p{3.8cm}|p{3.5cm}|}
+\hline
+期間 & プロジェクト内容 & 環境／規模 & 役割 \\ \hline
+2026年5月～\newline 現在
+	& ConductorワークフローオーケストレーションのGitOpsプラットフォームを構築。Web UI管理をバージョン管理・CI/CDデプロイに置き換え、PythonとGitHub Actionsで自動バックアップを実装。
+	& Python, GitHub Actions,\newline FluxCD, Helm,\newline GitOps
+	& ソフトウェアエンジニア\newline インターン \\ \hline
+同上
+	& VPNプロキシのIPローテーションツールにおける陳腐化したIP割り当てを修正し、160の本番Kubernetesポッド間で1日1万件超の送信元IPローテーションを実現。
+	& AWS(EKS/ECS/VPC),\newline Kubernetes,\newline WireGuard,\newline \mbox{OpenVPN},\newline Docker, FluxCD
+	& 同上 \\ \hline
+同上
+	& AWS EC2上にカスタムのGitHub Actionsランナーを構築し、Helm／FluxCDのデプロイを検証。開発チームがマージ済みPRの本番ロールアウトを確認できる体制を整備。
+	& AWS(EC2),\newline Helm, GitHub Actions
+	& 同上 \\ \hline
+同上
+	& 本番インフラにおけるシークレット管理を強化。最小権限のIAMロールでEKS Pod Identityを実装し、既存のFluxCDおよびHelmデプロイと並行してCrossplaneのコンポジションで自動化。
+	& AWS(IAM/EKS),\newline Kubernetes,\newline Pod Identity
+	& 同上 \\ \hline
+同上
+    & ADR（Architecture Decision Record）を導入し、インフラ設計の意思決定やトレードオフ分析を文書化。チーム内の知識共有とオンボーディング効率化に貢献。 
+	& Markdown, Git,\newline チーム内文書化
+	& 同上 \\ \hline
+\end{tabularx}
+\end{center}
+
+\subsection*{SwampHacks（2025年4月～2026年2月）}
+事業内容：フロリダ大学公認の学生主催ハッカソン（年1回36時間開催、参加者400名以上）
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{|p{2.8cm}|X|p{3.8cm}|p{3.5cm}|}
+\hline
+期間 & プロジェクト内容 & 環境／規模 & 役割 \\ \hline
+2025年4月～\newline 2026年2月
+	& Go言語を用いたイベント管理・応募プラットフォームの設計・開発。400名以上の参加者に対応し、5名のエンジニアチームを指揮して9ヶ月間の開発サイクルを主導。データベースマイグレーションと自動バックアップにより99\%の可用性を維持。
+	& Docker Compose, PostgreSQL,\newline Go言語,\newline Cloudflare／\newline 5名のエンジニアチーム（30名の部門横断委員会）
+	& リード・テクニカル\newline ディレクター \\ \hline
+同上
+	& Asynq + AWS S3/SESによる通知エンジン構築。1,000名以上の応募者への自動通知およびQRコード発行機能を実装。
+	& Asynq,\newline AWS(S3/SES),\newline GitHub Actions
+	& 同上 \\ \hline
+同上
+	& DNS管理、Caddyリバースプロキシ、Cloudflare TLS自動化を30以上のサブドメインで構成。
+	& Cloudflare, Caddy,\newline DNS
+	& 同上 \\ \hline
+同上
+	& 5つのマイクロサービス（API, ワーカー, Webアプリ, Discord bot）にGitHub ActionsでCI/CDパイプラインを構築。ステージング/本番デプロイを自動化。
+	& GitHub Actions,\newline Docker Compose,\newline 5マイクロサービス
+	& 同上 \\ \hline
+同上
+	& Goベースの合否判定エンジンを設計。重み付けスコアリングをハッカソンチームと個人応募者に適用。
+	& Go言語
+	& 同上 \\ \hline
+\end{tabularx}
+\end{center}
+
+\subsection*{Open Source Club（2023年9月～2025年6月）}
+資本金：非公開　従業員数：40名以上（学生コミュニティ）　設立：2010年代\\
+事業内容：フロリダ大学公認の学生主催オープンソースコミュニティ
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{|p{2.8cm}|X|p{3.8cm}|p{3.5cm}|}
+\hline
+期間 & プロジェクト内容 & 環境／規模 & 役割 \\ \hline
+2023年9月～\newline 2025年6月
+	& React Native製チャットアプリ「Echo Chat」の開発を主導（46 Stars、109 Forks）。40名以上のコントリビューターをオンボーディングガイド、コードレビュー、ペアプロでメンタリング。
+	& React Native, TypeScript,\newline Node.js,\newline Express.js ／\newline 40名以上のコントリビューター
+	& リードソフトウェア\newline デベロッパー \\ \hline
+\end{tabularx}
+\end{center}
+
+\section{得意分野・活かせる経験}
+
+\begin{itemize}
+    \item 日本語での実務コミュニケーション（上級）
+    \item Go言語によるバックエンドシステム設計・実装
+    \item Kubernetes環境での運用管理（FluxCD/GitOps, Helm）
+    \item AWSクラウドインフラ設計・構築（EKS, IAM, EC2）
+    \item CI/CDパイプライン自動化（GitHub Actions）
+\end{itemize}
+
+\newpage
+\section{自己PR}
+
+\textbf{＜Go言語によるスケーラブルなシステム設計とDevOpsの実践＞}
+
+Go言語を用いた高性能なシステムの構築を専門とし、最新のクラウドインフラツールでスケーラブルな展開を実現しています。SwampHacksのリードテクニカルディレクターとして、400人以上が利用するイベント管理・応募プラットフォームを開発し、CI/CDとDockerベースのデプロイの基盤を確立しました。さらに、「Ripple」というリアルタイムメッセージング基盤を通じて、同時実行するWebSocket接続にGoのチャネルを使い、水平スケールのためにRedisを活用するなど、システム設計力を磨きました。現在はVobileにて、プロダクション規模のKubernetesに取り組み、FluxCD（GitOps）、Helm、独自のCI/CDランナーを用いてデプロイを管理しています。運用の信頼性と保守性を重視し、システムが単に動作するだけでなく、費用対効果にも優れていることを常に目指しています。
+
+\textbf{＜異文化環境での主体的なリーダーシップとコミュニティ形成力＞}
+
+私は多様なグループを巻き込むリーダーシップと、ネイティブの日本語環境で成果を出す柔軟性を備えています。現在は20名の日本文学サークルを率い、毎週JLPT N2の文法と語彙を指導し、協働的な学習環境を構築しています。名古屋大学への交換留学中は、留学生のいない複数のサークルに完全に溶け込み、部誌への寄稿やイベントでの物販管理などの役割を担いました。また現在は同じ適応力をVobileでの職務にも活かし、ヨーロッパ、中国、ロサンゼルス、ニューヨーク、オーストラリアのメンバーと日々連携し、複数のタイムゾーンと文化的なコミュニケーション様式を考慮しつつ、本番環境でのエンジニアリング業務に従事しています。日本のグローバルなチームにおいても、この主体的な姿勢とバイリンガルのファシリテーション力を発揮したいと考えています。
+
+\begin{flushright}
+以上
+\end{flushright}
+
+\end{document}

@@ -1,0 +1,4 @@
+$latex = 'uplatex -interaction=nonstopmode %O %S';
+$dvipdf = 'dvipdfmx -p 182mm,257mm %O -o %D %S';
+$pdf_mode = 3;
+$aux_dir = 'build';

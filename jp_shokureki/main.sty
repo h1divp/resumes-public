@@ -1,0 +1,38 @@
+% 上下左右の空白を調整
+\usepackage[left=20mm,right=20mm,top=10mm,bottom=20mm]{geometry}
+
+% 表：横幅を指定
+\usepackage{tabularx}
+
+% 表：配置指定 [H] のために使用
+\usepackage{float}
+
+% 表：縦のセルを結合するために使用
+\usepackage{multirow}
+
+% 表：セル内改行
+\usepackage{makecell}
+
+% 著者名を右寄せにする
+% 参考: https://oku.edu.mie-u.ac.jp/~okumura/texfaq/qa/25838.html
+\makeatletter
+  \def\@maketitle{%
+  \newpage\null
+  % \vskip 1em%
+  \begin{center}%
+  \let\footnote\thanks
+    {\LARGE \@title \par}%
+    \vskip 1em%
+    {\Large \@author}
+  \end{center}% 追加
+    \mbox{}\hfill%% 追加
+    {
+      \lineskip .5em%
+      \begin{tabular}[t]{r}%
+        \@date \\
+      \end{tabular}\par}%
+  \par\vskip 1.5em}
+
+\makeatother
+\renewcommand{\headfont}{\bfseries\rmfamily}
+\setlength{\parindent}{0pt}
